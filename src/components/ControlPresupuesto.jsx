@@ -1,13 +1,13 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { formatearCantidad } from "../helpers";
 
-const ControlPresupuesto = ({ presupuesto }) => {
-  const formatearCantidad = (cantidad) => {
-    //Transformar numero a dinero
-    return cantidad.toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD",
-    });
-  };
+const ControlPresupuesto = ({ gastos, presupuesto }) => {
+  const [disponible, setDisponible] = useState(0);
+  const [gastado, setGastado] = useState(0);
+
+  useEffect(() => {
+    console.log("listo");
+  }, [gastos]);
 
   return (
     <div className="contenedor-presupuesto contenedor sombra dos-columnas">
